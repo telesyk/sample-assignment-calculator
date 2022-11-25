@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// Custom components
 import Button from "./components/Button";
 import ItemCustom from "./components/ItemCustom";
 import DatePicker from "./components/DatePicker";
@@ -26,7 +25,7 @@ const NEXT_DATE = new Intl.DateTimeFormat("en-US", DATE_OPTIONS).format(
 const inputClass = {
   default: "border border-info rounded-sm px-3 py-1",
   invalid: "border-danger",
-  valid: "border-success"
+  valid: "border-success",
 };
 
 export default class App extends Component {
@@ -44,7 +43,7 @@ export default class App extends Component {
         date: "",
         trueDate: TODAY,
         placeholder: CURRENT_DATE,
-        showDatepicker: false
+        showDatepicker: false,
       },
       ending: {
         title: "Ending on",
@@ -54,8 +53,8 @@ export default class App extends Component {
         date: "",
         trueDate: NEXT_DAY,
         placeholder: NEXT_DATE,
-        showDatepicker: false
-      }
+        showDatepicker: false,
+      },
     },
     steps: {
       understand: {
@@ -67,8 +66,8 @@ export default class App extends Component {
         sumTime: 0,
         description: [
           "Read your assignment guidelines attentively. Pay special attention to the citation style, page limits, content requirements, and paper samples.",
-          "If your topic is broad, then you need to narrow it down before you start your research. Otherwise, it will be difficult to address it in full."
-        ]
+          "If your topic is broad, then you need to narrow it down before you start your research. Otherwise, it will be difficult to address it in full.",
+        ],
       },
       research: {
         id: "research",
@@ -79,18 +78,18 @@ export default class App extends Component {
         sumTime: 0,
         description: [
           "Research the topic - study credible sources and collect information that addresses the discussed theme. You can find credible information in the SFU library or check scientific articles, open educational resources, Google Scholar, etc.",
-          "Review the data you found and group them based on the main points addressed in each statement."
+          "Review the data you found and group them based on the main points addressed in each statement.",
         ],
         links: [
           {
             title: "SFU",
-            url: "http://www.lib.sfu.ca/"
+            url: "http://www.lib.sfu.ca/",
           },
           {
             title: "Google Scholar",
-            url: "https://scholar.google.com/"
-          }
-        ]
+            url: "https://scholar.google.com/",
+          },
+        ],
       },
       write: {
         id: "write",
@@ -101,8 +100,8 @@ export default class App extends Component {
         sumTime: 0,
         description: [
           "After grouping data, list the main sections / paragraphs you are going to cover in your paper.",
-          "Each section should address a single idea and be backed up with facts, proven statements, pieces of evidence, which you can use to support your claims."
-        ]
+          "Each section should address a single idea and be backed up with facts, proven statements, pieces of evidence, which you can use to support your claims.",
+        ],
       },
       prepare: {
         id: "prepare",
@@ -113,8 +112,8 @@ export default class App extends Component {
         sumTime: 0,
         description: [
           "Develop an outline and expand your ideas into complete paragraphs. Writing your ideas down and solidifying the key points of your paper is enough since it is not the final writing.",
-          "In case you are citing any source, make sure to mention its name and author."
-        ]
+          "In case you are citing any source, make sure to mention its name and author.",
+        ],
       },
       revise: {
         id: "revise",
@@ -126,8 +125,8 @@ export default class App extends Component {
         description: [
           "Check your draft carefully, paying special attention to its contents, structure, and argument formulations to clearly see its strengths and weaknesses.",
           "You can as well play around with the order of paragraphs and some formulations. Your main focus should be on generating convincing and straight-to-the-point content.",
-          "Revise a draft as many times as needed to refine your arguments."
-        ]
+          "Revise a draft as many times as needed to refine your arguments.",
+        ],
       },
       finalize: {
         id: "finalize",
@@ -137,8 +136,8 @@ export default class App extends Component {
         coef: 0.15,
         sumTime: 0,
         description: [
-          "Carefully check whether all sources are properly integrated and cited and no in-text citation is missing. This step is crucial for ensuring academic integrity of your work."
-        ]
+          "Carefully check whether all sources are properly integrated and cited and no in-text citation is missing. This step is crucial for ensuring academic integrity of your work.",
+        ],
       },
       editAndFormat: {
         id: "editAndFormat",
@@ -150,10 +149,10 @@ export default class App extends Component {
         description: [
           "Do the final check of the paper: review its formatting and citation, pay attention to clarity and flow of your writing as well as a paper structure.",
           "Make sure there are no common punctuation, grammar, spelling, or word usage errors.",
-          "Finally, check the paper for plagiarism and hand it in!"
-        ]
-      }
-    }
+          "Finally, check the paper for plagiarism and hand it in!",
+        ],
+      },
+    },
   };
 
   /* DEBUG */
@@ -274,7 +273,7 @@ export default class App extends Component {
     if (dayDiff <= 0) {
       this.setState({
         errors: "Please, set Starting date greater than Ending date",
-        term: 0
+        term: 0,
       });
     } else {
       this.calculateSteps(msDiff, startDate);
@@ -282,7 +281,7 @@ export default class App extends Component {
       this.setState({
         isOpened: !this.state.isOpened,
         errors: "",
-        term: Math.round(dayDiff)
+        term: Math.round(dayDiff),
       });
     }
   }
@@ -296,12 +295,12 @@ export default class App extends Component {
         this.calculateResult();
       } else {
         this.setState({
-          errors: "Please, set your Start Date"
+          errors: "Please, set your Start Date",
         });
       }
     } else {
       this.setState({
-        isOpened: !this.state.isOpened
+        isOpened: !this.state.isOpened,
       });
 
       let fields = this.state.fields;
