@@ -9,17 +9,19 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-infinite-calendar": "2.3.1",
-    "react-scripts": "3.0.1",
+    "react-scripts": "4.0.3",
     "tailwindcss": "3.2.2"
   },
   "devDependencies": {
+    "eslint-config-react-app": "^7.0.1",
     "typescript": "3.3.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "serve": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint ."
   },
   "browserslist": [
     ">0.2%",
